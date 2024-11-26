@@ -1,27 +1,6 @@
 import posts from '../db/posts.js' // database
 import fs from 'fs' //to manipulate system files
 
-
-//old version of Index
-/* const index = (req,res) => {
-  let markup = '<ul>'
-
-  posts.forEach(post => {
-
-    const {title, content, image} = post
-
-    markup += `
-    <li>
-      <h2>${title}</h2>
-      <p>${content}</p>
-      <img src="public/imgs/posts/${image}" alt="">
-    </li>
-      `
-  });
-  markup += `</ul>`
-  res.send(markup)
-} */
-
 const index = (req,res) => {
   res.status(200).json({
     data: posts,
